@@ -1,18 +1,91 @@
 body{
-    background-color: #003;
-    font-family: Arial;
+    background-color: #ef7070 ;
+    font-family: Poppins;
+    font-weight: 400;    
 }
 
-a{text-decoration: none; color:black;}
+a{text-decoration: none; color:#fe3738;}
 a:hover{text-decoration: underline;}
 
+
+
+
+div[class*=box] {
+    height: 33.33%;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+  }
+
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+}
+.btn-one span {
+  transition: all 0.3s;
+}
+.btn-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+  letter-spacing: 2px;
+}
+.btn-one:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}
+
+
+
+
+
+
 body>header{
-    background-color: #fff;
+    background-color: #ffc2c2;
+    font-weight: 900;
     display:flex;
     width:80em;
-    margin:0 auto 2em auto;    
+    margin:0 auto 2em auto;
     padding:0;
-
 }
 body>header img{
     height:5em;
@@ -21,24 +94,24 @@ body>header #menu {
     display:flex;
     width:50%;
     align-items: stretch;
-    border-left: 1px solid #99b;
+    border-left: 1px solid #ffc2c2;
 }
 body>header #menu a{
     flex:1;
     text-align: center;
     padding-top:2em;
-    border-right: 1px solid #99b;
+    border-right: 1px solid #ffc2c2;
 }
 body>header a:hover
 {
-    background-color: #99b;
+    background-color: #f8eff0;
 }
 body>header ul{list-style: none;}
 body>header #user
 {
     margin-left: auto;
     flex:0.2;
-    border-left: 1px solid #99b;
+    border-left: 1px solid #ffc2c2;
 }
 body>header #user>a{
     display:block;
@@ -52,8 +125,8 @@ body>header #user ul{
     padding:0;
     margin:0;
     margin-left:-5em;
-    background-color: #fff;
-    border: 1px solid #99b;
+    background-color: #f8eff0;
+    border: 1px solid #ef7070;
 
     z-index: 1;
 }
@@ -61,7 +134,7 @@ body>header #user ul li a{
     display:block;
     width:10em;
     padding:1em;
-    border-bottom: 1px solid #99b;
+    border-bottom: 1px solid #ef7070;
 }
 body>header #user:hover ul{
     display:block;
@@ -74,7 +147,7 @@ body>header #user:hover ul{
     margin:0 auto 2em auto;
 }
 #wrapper aside{
-    background-color: #fff;
+    background-color: #ffc2c2;
     flex:1;
     padding:1em;
     border-radius: 1em;    
@@ -92,7 +165,7 @@ body>header #user:hover ul{
     overflow-y:  scroll;
 }
 #wrapper main article{
-    background-color: #fff;
+    background-color: #ffc2c2;
     padding:1em;
     margin-bottom: 1em ;
     border-radius: 1em;
@@ -124,13 +197,22 @@ body>header #user:hover ul{
 
 #wrapper.admin{flex-direction: row-reverse}
 #wrapper.admin aside{flex:1;margin-left:1em;border-radius:0;padding:0;}
-#wrapper.admin main{flex:2;background-color: #fff;border-radius: 0;padding:0;}
+#wrapper.admin main{flex:2;background-color: #00ff00;border-radius: 0;padding:0;}
 #wrapper.admin h2{text-align: center;}
 #wrapper.admin h3{margin:0;}
 #wrapper.admin nav{text-align: right;}
-#wrapper.admin article{border:1px solid #ddd;border-radius: 1em;padding:1em;margin:1em;}
+#wrapper.admin article{border:1px solid #00ffbf;border-radius: 1em;padding:1em;margin:1em;}
 #wrapper.admin article p{float:left;margin:0;}
 
+/* user login */
+#user-login{
+    text-align: center;
+    padding: 2em 0;
+    width: 100%;
+    margin-left: auto;
+    flex: 0.2;
+    border-left: 1px solid #ffc2c2;
+}
 
 .parameters dl dt{float:left;font-weight: bold;line-height: 1.5em;}
 .parameters dl dd{margin-left:15em;line-height: 1.5em;}
@@ -152,9 +234,55 @@ body>header #user:hover ul{
 }
 
 pre{
-    color:#aaa;
+    color:#0618de;
 }
 
 form dl dt{float:left;font-weight: bold;line-height: 1.5em;}
 form dl dd{margin-left:10em;line-height: 1.5em;margin-bottom: 1em}
 form dl dd textarea{width:40em;height: 15em;}
+
+
+
+/* CSS */
+.button-23 {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
