@@ -1,4 +1,9 @@
+
+ <?php include("connect.php"); ?>
+
 <?php include("header.php"); ?>
+
+
         <div id="wrapper" >
             <aside>
                 <h2>Présentation</h2>
@@ -7,6 +12,7 @@
             <main>
                 <article>
                     <h2>Connexion</h2>
+                               
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -19,7 +25,7 @@
                         // on ne fait ce qui suit que si un formulaire a été soumis.
                         // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
                         // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
-                        echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                       // echo "<pre>" . print_r($_POST, 1) . "</pre>";
                         // et complétez le code ci dessous en remplaçant les ???
                         $emailAVerifier = $_POST['email'];
                         $passwdAVerifier = $_POST['motpasse'];
@@ -49,13 +55,20 @@
                             
                         } else
                         {
-                            echo "Votre connexion est un succès : " . $user['alias'] . ".";
+                            echo "Votre connexion est un succès, " . $user['alias'] . ".";
                             // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
                             $_SESSION['connected_id']=$user['id'];
+                            header ("Location:news.php");
                         }
                     }
-                    ?>                     
+                    ?>  
+
+
+
+<?php 
+                if (!isset($_SESSION['connected_id'])) : 
+            ?>
                     <form action="login.php" method="post">
                         <dl>
                             <dt><label for='email'>E-Mail</label></dt>
@@ -69,6 +82,9 @@
                         Pas de compte?
                         <a href='registration.php'>Inscrivez-vous.</a>
                     </p>
+                    <?php
+                endif
+            ?>
 
                 </article>
             </main>

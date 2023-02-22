@@ -33,7 +33,7 @@
                      //echo "<pre>" . print_r($post, 1) . "</pre>";
                 ?>
                 <article>
-                    <img src="../img/user.jpg" alt="blason"/>
+                    <img src="../img/girl 1.jpg" alt="blason"/>
                     <a href="wall.php?user_id=<?php echo $post['id']?>">
                         <h3><?php echo $post['alias'] ?></h3>
                     </a>

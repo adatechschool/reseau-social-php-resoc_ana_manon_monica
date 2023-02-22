@@ -1,7 +1,7 @@
-<?php session_start()
-?>
+<?php session_start()?>
  <?php include("connect.php"); ?>
 <article>
+                   
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -38,18 +38,10 @@
                         {
                             echo "Le message a bien été envoyé : " . $authorId;
                             //echo " <a href='login.php'>Connectez-vous.</a>";
+                            header ("Location: wallUser.php?user_id=9");
+                            
                         }
                     }
                     ?>                     
-                    <form action="formAdd.php" method="post">
-                        <dl>
-                            <dt><label for='text'>Message</label></dt>
-                            <dd><input type='textarea' name='content'></dd>
-
-                            <dt><label for='text'># Tags</label></dt>
-                            <dd><input type='text' name='hashtag'></dd>
-                        </dl>
-                        <input type='submit' value="Publier">
-                    </form>
                 </article>
             </main>

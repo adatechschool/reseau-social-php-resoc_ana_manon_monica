@@ -1,5 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("connect.php"); ?>
+
         <div id="wrapper" class='admin'>
             <aside>
                 <h2>Mots-clés</h2>
@@ -23,6 +24,7 @@
                 {
                     //echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
+                    
                     <article>
                         <h3>#<?php echo $tag['label']?></h3>
                         <p><?php echo $tag['id']?></p>
@@ -30,6 +32,8 @@
                             <a href="tags.php?tag_id=<?php echo $tag['id']?>">Messages</a>
                         </nav>
                     </article>
+                    <script src="https://apis.google.com/js/platform.js"></script>
+
                 <?php } ?>
             </aside>
             <main>

@@ -1,5 +1,5 @@
-<?php include("header.php"); ?>
 
+<?php include("header.php"); ?>
         <div id="wrapper">
             <?php
             /**
@@ -23,7 +23,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                // echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="../img/user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="../img/girl 1.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Vous pouvez poster vos messages : <?php echo $user['alias'] ?>
@@ -32,8 +32,23 @@
                 </section>
             </aside>
             <main> 
-            <?php include("formAdd.php"); ?>
+            <form action="formAdd.php" method="post">
+                        <dl>
+                            <dt>
+                                <label for='text'>Message</label>
+                            </dt>
+                            <dd>
+                                <textarea type='message' name='content'></textarea>
+
+                            </dd>
+                           <!-- <dt><label for='text'># Tags</label></dt>
+                            <dd><input type='text' name='hashtag'></dd> -->
+                        </dl>
+                        <input type='submit' value="Publier" class="button-23">
+                </form>
+                </br>         
                 <?php
+                
                 /**
                  * Etape 3: récupérer tous les messages de l'utilisatrice
                  */
@@ -59,10 +74,12 @@
                 /**
                  * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
                  */
+                
                 while ($post = $lesInformations->fetch_assoc())
                 {
                     //echo "<pre>" . print_r($post, 1) . "</pre>";
-                    ?>                
+                    ?>   
+                    
                     <article>
                         <h3>
                             <time datetime='2020-02-01 11:12:13' ><?php echo $post['created'] ?></time>
@@ -72,14 +89,15 @@
                         </a>
                         <div>
                             <p><?php echo $post['content'] ?></p>
-                        </div>                                            
+                        </div>       
+                                                      
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?></small>
+                            <small>♥ <?php echo $post['like_number'] ?>  <button>Supprimer   </button>  </small>
                             <a href=""># <?php echo $post['taglist'] ?></a>,
-                           
                         </footer>
                     </article>
                 <?php } ?>
+                
             </main>
         </div>
     </body>
