@@ -143,8 +143,8 @@ body>header #user:hover ul{
 
 #wrapper{
     display:flex;    
-    width:80em;
-    margin:0 auto 2em auto;
+    width:80%;
+    margin:auto;
 }
 #wrapper aside{
     background-color: #ffc2c2;
